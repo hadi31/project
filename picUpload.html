@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <title>Upload Document</title>
+   </head>
+   <body>
+      <!DOCTYPE html>
+      <html lang="en">
+         <head>
+            <title>Bootstrap otp Form</title>
+         </head>
+         <body>
+            <!DOCTYPE html>
+            <html lang="en">
+               <head>
+                  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap" rel="stylesheet">
+                  <title>Bootstrap Apply Onboarding Form</title>
+                  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+                  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+                  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+                  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
+                  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+                  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+                  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"/>
+                  <style>
+                     * {
+                     padding: 0;
+                     margin: 0;
+                     box-sizing: border-box;
+                     font-family: 'Poppins', sans-serif
+                     }
+                     nav {
+                     min-height: 70px
+                     }
+                     nav .navbar-brand .logo {
+                     padding: 10px 15px;
+                     border-radius: 8px
+                     }
+                     nav .navbar-brand .logo .h2 {
+                     margin: 0
+                     }
+                     nav .navbar-brand .h4 {
+                     margin-bottom: 0px;
+                     font-weight: 900
+                     }
+                     nav .navbar-brand .fs-6 {
+                     font-size: 0.88rem !important
+                     }
+                     nav ul li {
+                     padding: 0 50px
+                     }
+                     .navbar-light .navbar-nav .nav-link {
+                     color: #333
+                     }
+                     body {
+                     letter-spacing: 0.7px;
+                     background-color: #eeee
+                     }
+                     .containerabx
+                     {
+                     width: 500px;
+                     margin: 20px auto;
+                     }
+                     .preview
+                     {
+                     padding: 10px;
+                     position: relative;
+                     }
+                     .navbar-light .navbar-nav .nav-link:hover {
+                     color: #4e2296
+                     }
+                     .preview i
+                     {
+                     color: white;
+                     font-size: 35px;
+                     transform: translate(50px,130px);
+                     }
+                     .preview-img
+                     {
+                     border-radius: 100%;
+                     box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.7);
+                     }
+                     .browse-button
+                     {
+                     width: 200px;
+                     height: 200px;
+                     border-radius: 100%;
+                     position: absolute; /* Tweak the position property if the element seems to be unfit */
+                     top: 10px;
+                     left: 132px;
+                     opacity: 0;
+                     transition: 0.3s ease;
+                     }
+                     .browse-button:hover
+                     {
+                     opacity: 1;
+                     }
+                     .browse-input
+                     {
+                     width: 200px;
+                     height: 200px;
+                     border-radius: 100%;
+                     transform: translate(-1px,-26px);
+                     opacity: 0;
+                     }
+                     .form-group
+                     {
+                     width:  250px;
+                     margin: 10px auto;
+                     }
+                     .form-group input
+                     {
+                     transition: 0.3s linear;
+                     }
+                     .form-group input:focus
+                     {
+                     border: 1px solid crimson;
+                     box-shadow: 0 0 0 0;
+                     }
+                     .Error
+                     {
+                     color: crimson;
+                     font-size: 13px;
+                     }
+                     .Back
+                     {
+                     font-size: 25px;
+                     }
+                  </style>
+               </head>
+               <body>
+                  <header>
+                     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <div class="container">
+                           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynav" aria-controls="mynav" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button> 
+                           <a class="navbar-brand" href="#">
+                              <div class="d-flex">
+                                 <div class="ms-3 d-flex flex-column">
+                                    <div class="h4">Digital Customer </div>
+                                    <div class="h4">Onboarding</div>
+                                 </div>
+                              </div>
+                           </a>
+                           <div class="collapse navbar-collapse" id="mynav">
+                              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                                 <li class="nav-item"> <a class="nav-link" href="{% url 'user:applyboard' %}">Back<i class="fa fa-angle-left" aria-hidden="true"></i></a> </li>
+                                 <li class="nav-item"> <a class="nav-link" href="{% url 'user:uploadDoc' %}">Next<i class="fa fa-angle-right" aria-hidden="true"></i></a> </li>
+                                 <li class="nav-item"> <a class="nav-link" href="{% url 'accounts:logout' %}"> <span class="fas fa-user pe-2"></span> log out</a> </li>
+                              </ul>
+                           </div>
+                        </div>
+                     </nav>
+                     <div class="containerabx">
+                        <div class="Back">
+                           <!--  <i class="fa fa-arrow-left" onclick="Back()"></i> -->
+                        </div>
+                        <p class="h2 text-center">Upload Picture</p>
+                        <form action="{% url 'accounts:uploadPic' %}" method="post" enctype="multipart/form-data">
+                           {% csrf_token %}
+                           {{ form.as_p }}
+                           <div class="preview text-center">
+                              <img class="preview-img" src="http://simpleicon.com/wp-content/uploads/account.png" alt="Preview Image" width="200" height="200"/>
+                              <div class="browse-button">
+                                 <i class="fa fa-pencil-alt"></i>
+                                 <input id="upload" type="file" name="upload" accept="image/x-png,image/gif,image/jpeg" required="required" onchange="readURL(this);" class="form-control border-0" >
+                              </div>
+                              <span class="Error"></span>
+                           </div>
+                           <div class="form-group">
+                              <input type="tel" class="form-control"  name="name" placeholder="Name" required="required">
+                           </div>
+                           <div class="form-group">
+                              <input type="tel" class="form-control" pattern="[0-9]{5}-[0-9]{7}-[0-9]{1}" name="cnic" placeholder="CNIC" required="required">
+                           </div>
+                           <div class="form-group">
+                              <label>Gender:</label><br/>
+                              <label><input type="radio" name="gender" required value="Male" checked /> Male</label>
+                              <label><input type="radio" name="gender" required value="Female" /> Female</label>
+                              <label><input type="radio" name="gender" required value="Other" /> Other</label>
+                              <span class="Error"></span>
+                           </div>
+                           <div class="form-group">
+                              <button type="submit" class="btn btn-success btn-lg btn-block">upload</button>
+                           </div>
+                        </form>
+                     </div>
+                     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+                     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+                     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+                  </header>
+               </body>
+            </html>
+         </body>
+         <script></script>
+      </html>

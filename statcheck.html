@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap" rel="stylesheet">
+      <title>View Application Status</title>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+      <style>
+         * {
+         padding: 0;
+         margin: 0;
+         box-sizing: border-box;
+         font-family: 'Poppins', sans-serif
+         }
+         nav {
+         min-height: 70px
+         }
+         nav .navbar-brand .logo {
+         padding: 10px 15px;
+         border-radius: 8px
+         }
+         nav .navbar-brand .logo .h2 {
+         margin: 0
+         }
+         nav .navbar-brand .h4 {
+         margin-bottom: 0px;
+         font-weight: 900
+         }
+         nav .navbar-brand .fs-6 {
+         font-size: 0.88rem !important
+         }
+         nav ul li {
+         padding: 0 20px
+         }
+         .navbar-light .navbar-nav .nav-link {
+         color: #333
+         }
+         body {
+         letter-spacing: 0.7px;
+         background-color: #eeee
+         }
+         container {
+         margin-top: 0px;
+         margin-bottom: 0px
+         }
+      </style>
+   </head>
+   <body>
+      <header>
+         <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynav" aria-controls="mynav" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button> 
+               <a class="navbar-brand" href="#">
+                  <div class="d-flex">
+                     <div class="ms-3 d-flex flex-column">
+                        <div class="h4">Digital Customer </div>
+                        <div class="h4">Onboarding</div>
+                     </div>
+                  </div>
+               </a>
+               <div class="collapse navbar-collapse" id="mynav">
+                  <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                     <li class="nav-item"> <a class="nav-link" href="{% url 'user:menu' %}">Back<i class="fa fa-angle-left" aria-hidden="true"></i></a> </li>
+                     <li class="nav-item"> <a class="nav-link" href="{% url 'accounts:homepage' %}"> <span class="fas fa-user pe-2"></span> log out</a> </li>
+                  </ul>
+               </div>
+            </div>
+         </nav>
+         <div class="container mt-4">
+         <div class="row justify-content-center">
+            <div class="col-md-9">
+               <div class="card text-center justify-content-center shaodw-lg card-1 border-0 bg-white px-sm-2">
+                  <div class="card-body show ">
+                     <div class="radio-group row justify-content-between px-3 text-left a">
+                        <div class="flex-row">
+                           <div class="col">
+                           </div>
+                        </div>
+                        <div class="container mt-3 col-6">
+                           <form>
+                              {% if checker %}
+                              <div class="form-group">
+                                 <label >Application Status </label>
+                                 <input type="text" class="form-control" value="{{checker.status}}">
+                              </div>
+                          <!--    <div class="form-group">
+                                 <label >Similarity Index</label>
+                                 <input type="text" class="form-control" value="{{checker.Similarity_Index}}">
+                              </div> -->
+                              {% if checker.date %}
+                              <div class="form-group">
+                                 <label >Date Applied</label>
+                                 <input type="text" class="form-control" value="{{checker.date}}">
+                              </div>
+                              {% else %}
+                              <div class="form-group">
+                                 <label >Date Applied</label>
+                                 <input type="text" class="form-control" value="Not Specified">
+                              </div>
+                              {% endif %}
+                              {% else %}
+                              <div class="form-group">
+                                 <label >Application has not been Submitted yet.</label>
+                              </div>
+                              {% endif %}
+                           </form>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </header>
+   </body>
+</html>
+</body>
+<script></script>
+</html>
